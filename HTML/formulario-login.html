@@ -3,29 +3,64 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Formulario HTML</title>
-  <link rel="stylesheet" href="css/estilos1.css">
+  <title>Login</title>
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
+<header>
+  <a class="footer__logo" href="index.html"><img src="img/ALKACEN.png" width="130px" alt="logo"></a>
+  <a class="cta" href="#">Iniciar Sesion</a>
+</header>
+
 <body>
-  <form class="footer__form" action="" method="post">
-    <div class="container">
-      <div class="footer__form-group">
-        <label for="first-name">Nombre:</label>
+
+  <form class="login__form" action="" method="post">
+    <div class="container__login">
+      <div class="login__form-group">
+        <label for="username">Usuario:</label>
         <input type="text" id="first-name" name="first-name" required>
       </div>
       <div class="footer__form-group">
-        <label for="last-name">Apellido:</label>
-        <input type="text" id="last-name" name="last-name" required>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="last-name" name="last-name" required>
       </div>
-      <div class="footer__form-group">
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="footer__form-group">
-        <button type="submit">Enviar</button>
+      <div class="login__form-group">
+        <button type="submit">Iniciar Sesión</button><br><br><br><br><br><br><br><br><br><br><br><br>
       </div>
     </div>
   </form>
+
+  <footer>
+    <div class="container">
+      <div class="footer__logo">
+        <img src="img/ALKACEN.png" alt="logo" width="150px">
+      </div>
+      <div class="footer__links">
+        <h3>Enlaces</h3><br>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="electrodomesticos.html">Electrodomésticos</a></li>
+          <li><a href="tecnicos.html">Técnicos</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+        </ul>
+      </div>
+      <div class="footer__contact">
+        <h3>Contacto</h3><br>
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i> Dirección: Calle 1234, Ciudad, País</li>
+          <li><i class="fas fa-envelope"></i> Email: info@alkacen.com</li>
+          <li><i class="fas fa-phone"></i> Teléfono: +1 234 567 8901</li>
+        </ul>
+      </div>
+      <div class="footer__social">
+        <h3>Síguenos</h3><br>
+        <ul>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </ul>
+      </div>
+    </div>
+  </footer>
 
 </body>
 
