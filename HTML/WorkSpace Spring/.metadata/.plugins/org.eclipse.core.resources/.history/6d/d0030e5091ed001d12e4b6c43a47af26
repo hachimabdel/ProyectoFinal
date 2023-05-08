@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inicio</title>
+	<link rel="stylesheet" href="../css/estilos.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js"
+		integrity="sha384-sCI3dTBIJuqT6AwL++zH7qL8ZdKaHpxU43dDt9SyOzimtQ9eyRhkG3B7KMl6AO19"
+		crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"
+		integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
+		crossorigin="anonymous"></script>
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+	
+</head>
+
+<body>
+
+	<header th:fragment="encabezado">
+		<a class="footer__logo" href="../../templates/index.html"><img src="img/ALKACEN.png" width="130px" alt="logo"></a>
+		<nav>
+			<ul class="nav__links">
+				<li><a href="../index.html" th:href="@{/index.html}">Inicio</a></li>
+				<li><a href="../electrodomesticos.html" th:href="@{/electrodomesticos.html}">Electrodomésticos</a></li>
+				<li><a href="../tecnicos.html" th:href="@{/tecnicos.html}">Técnicos</a></li>
+				<li><a href="../nosotros.html" th:href="@{/nosotros.html}">Nosotros</a></li>
+			</ul>
+		</nav>
+		<a class="cta" href="../../formulario-login.html">Iniciar Sesion</a>
+		<p class="menu cta">Menu</p>
+	</header>
+	<div class="overlay">
+		<a class="close">&times;</a>
+		<div class="overlay__content">
+			<a href="../../resources/templates/index.html">Inicio</a>
+			<a href="../../resources/templates/electrodomesticos.html">Electrodomésticos</a>
+			<a href="../../resources/templates/tecnicos.html">Técnicos</a>
+			<a href="../../resources/templates/nosotros.html">Nosotros</a>
+		</div>
+	</div>
+	<script type="text/javascript" src="../static/js/index.js"></script>
+</body>
+
+</html>

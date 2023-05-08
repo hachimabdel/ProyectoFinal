@@ -1,0 +1,5 @@
+package com.salesianos.dam.ejemplo10CRUDCompleto.repositorio;
+
+public interface AlumnoRepositorio {
+
+}

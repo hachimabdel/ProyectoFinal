@@ -1,0 +1,5 @@
+package com.salesianos.dam.ejemplo10CRUDCompleto.model;
+
+public class Alumno {
+
+}

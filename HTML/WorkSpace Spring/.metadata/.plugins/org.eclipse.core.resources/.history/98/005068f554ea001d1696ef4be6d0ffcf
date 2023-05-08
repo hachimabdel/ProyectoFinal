@@ -1,0 +1,34 @@
+package com.salesianos.dam.ejemplo10CRUDCompleto.model;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import jakarta.persistence.Entity;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity@Data@NoArgsConstructor
+public class Alumno {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
+	
+	private String nombre;
+	private String apellidos;
+	private String email;
+	
+	
+	/**
+	 * @param nombre
+	 * @param apellidos
+	 * @param email
+	 */
+	public Alumno(String nombre, String apellidos, String email) {
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.email = email;
+	}
+
+}

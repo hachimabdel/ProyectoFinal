@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Pilotos</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script th:inline="javascript">
+    	let mostrar =  /*[[${mostrarForm}]]*/ false;
+    </script>
+    <script src="../static/js/mostrarFormularioEditar.js" th:src="@{/js/mostrarFormularioEditar.js}" defer ></script>
+    <script src="../static/js/validacionPilotos.js" th:src="@{/js/validacionPilotos.js}" defer ></script>
+    <script src="../static/js/menuMovil.js" th:src="@{/js/menuMovil.js}" defer ></script>
+</head>
+<body>
+	<nav th:replace="~{fragments/nav::nav}"></nav>
+	<main class="mainadmin mt-0 p-5 row">
+		<h1 class="col-xl-9 order-xl-1 w-50">Pilotos</h1>
+		<div class="col-xl-3 order-xl-3">
+			<form method="GET" th:action="@{/pilotos/busqueda}">
+				<div class="input-group">
+				  <input id="nombre" name="nombre" type="text" class="form-control" placeholder="Buscar">
+				  <button class="btn btn-danger" type="submit"><i class="bi bi-search"></i></button>
+				</div>
+			</form>
+			<form>
+				<input id="add" type="button" value="Añadir" data-bs-toggle="modal" data-bs-target="#addPiloto" class="btn-danger mt-3 rounded-3 w-100">
+			</form>
+		</div>
+		<div class="alert alert-danger d-flex flex-row alert-dismissible" role="alert"
+			th:if="${param.error}">
+			<button type="button" class="btn-close mx-2 my-0 close" data-bs-dismiss="alert"></button>
+			<div class="d-block">No se puede borrar un piloto que ya ha participado en alguna sesion.</div>
+		</div>
+		<div class="col-xl-9 order-xl-2 tabla">
+  			<table class="table table-hover">
+  				<thead>
+					<tr>
+						<th></th>
+						<th>DNI</th>
+						<th>Nombre</th>
+						<th>Apellidos</th>
+						<th>Email</th>
+						<th>Fecha nacimiento</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="piloto : ${listaPilotos}">
+						<td><img th:src="${not (#strings.isEmpty(piloto.imgUrl))} 
+								              ? ${piloto.imgUrl} : 'https://cdn.icon-icons.com/icons2/1674/PNG/512/person_110935.png'" class="h-100"></td>
+						<td th:text="${piloto.dni}"></td>
+						<td th:text="${piloto.nombre}"></td>
+						<td th:text="${piloto.apellidos}"></td>
+						<td th:text="${piloto.email}"></td>
+						<td th:text="${piloto.fechaNacimiento}"></td>
+						<td>
+							<a th:href="@{/pilotos/update/{id}(id=${piloto.dni})}"><i class="bi bi-pencil-square"></i></a>
+							<a href="#" data-bs-toggle="modal" th:attr="data-bs-target='#removePiloto'+ '-' + ${piloto.dni}"><i class="bi bi-trash"></i></a>
+						</td>
+						
+						<div class="modal text-white" th:id="removePiloto + '-' + ${piloto.dni}">
+					      <div class="modal-dialog remove">
+					        <div class="modal-content">
+
+					          <div class="modal-header bg-danger border-0">
+					            <h4 class="modal-title mx-auto">¿Estas seguro?</h4>
+					            <button type="button" class="btn-close mx-0" data-bs-dismiss="modal"></button>
+					          </div>
+					
+					          <!-- Modal body -->
+					          <div class="modal-body bg-danger">
+					            <a class="btn bg-white mx-auto w-100" th:href="@{/pilotos/remove/{id}(id=${piloto.dni})}">Borrar</a>
+					          </div>
+					
+					        </div>
+					      </div>
+					    </div>
+					    
+					</tr>
+				</tbody>
+  			</table>
+		</div>
+		
+		<div class="modal" id="addPiloto">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		
+		      <!-- Modal Header -->
+		      <div class="modal-header">
+		        <h4 class="modal-title" th:text="${mostrarForm}? 'Editar piloto' : 'Nuevo Piloto'"></h4>
+		        <form action="http://localhost:9000/pilotos/">
+		        	<button type="submit" class="btn-close"></button>
+		        </form>
+		      </div>
+		
+		      <!-- Modal body -->
+		      <div class="modal-body">
+		        <form method="POST" th:action="@{/pilotos/edicion}" th:object="${piloto}" onsubmit="return validarFormulario();" id="formPilotos">
+		        	<div class="form-floating mb-3 mt-3">
+					  <input required type="text" class="form-control" id="nombrePiloto" placeholder="Introduzca el nombre" name="Nombre" th:field="*{nombre}">
+					  <p class="errorForm my-1">El nombre no puede estar vacío.</p>
+					  <label for="nombrePiloto">Nombre</label>
+					</div>
+					<div class="form-floating mb-3 mt-3">
+					  <input required type="text" class="form-control" id="apellidosPiloto" placeholder="Introduzca los apellidos" name="Apellidos" th:field="*{apellidos}">
+					  <p class="errorForm my-1">Los apellidos no pueden estar vacíos.</p>
+					  <label for="apellidosPiloto">Apellidos</label>
+					</div>
+					<div class="form-floating mb-3 mt-3">
+					  <input required type="text" class="form-control" id="dniPiloto" placeholder="Introduzca el dni" name="dni" th:field="*{dni}" minlength="9" maxlength="9">
+					  <p class="errorForm my-1">El DNI no es válido.</p>
+					  <label for="dniPiloto">DNI</label>
+					</div>
+					<div class="form-floating mb-3 mt-3">
+					  <input type="text" class="form-control" id="imgPiloto" placeholder="Pege la url de la imagen" name="Imagen" th:field="*{imgUrl}">
+					  <label for="imgPiloto">Imagen (URL)</label>
+					</div>
+					<div class="form-floating mb-3 mt-3">
+					  <input required type="email" class="form-control" id="emailPiloto" placeholder="Introduzca el email" name="Email" th:field="*{email}">
+					  <p class="errorForm my-1">El email no puede estar vacío.</p>
+					  <label for="emailPiloto">Email</label>
+					</div>
+					<div class="input-group mb-3 mt-3">
+						<span class="input-group-text"><i class="bi bi-calendar-fill mx-2"></i>Fecha nacimiento</span>
+						<input class="form-control" required type="date" id="fechaNacimiento" name="fechaNacimiento" th:field="*{fechaNacimiento}">
+					</div>
+					<p class="errorForm my-1">El piloto debe tener al menos 6 años.</p>
+					<div class="modal-footer">
+						<input type="submit" class="btn btn-success" value="Guardar">
+				    </div>
+		        </form>
+		      </div>
+		
+		    </div>
+		  </div>
+		</div>
+		
+	</main>
+</body>
+</html>

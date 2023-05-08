@@ -1,0 +1,3 @@
+# Cambiamos el puerto, por si tenemos algo ejecutando en 8080
+server.port=9000
+
