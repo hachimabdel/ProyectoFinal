@@ -4,23 +4,20 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity @NoArgsConstructor @Data
-public class Cliente {
-	
+@Entity @Data @NoArgsConstructor @AllArgsConstructor
+public class Categoria {
 	@Id
 	@GeneratedValue
-	private long dni;
+	private Long id;
 	
 	private String nombre;
-	private String apellidos;
-	private String direccion;
 	
-	
-	
-	
-	
+	public Categoria(String nombre) {
+		this.nombre = nombre;
+	}
 
 }

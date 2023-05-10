@@ -2,23 +2,23 @@ package com.salesianostriana.dam.ProyectoFinal.service;
 
 import org.springframework.stereotype.Service;
 
-import com.salesianostriana.dam.ProyectoFinal.model.cliente;
-import com.salesianostriana.dam.ProyectoFinal.repository.clienteRepository;
+import com.salesianostriana.dam.ProyectoFinal.model.Cliente;
+import com.salesianostriana.dam.ProyectoFinal.repository.ClienteRepository;
 
 @Service
-public class clienteService /*extends servicioBase<>*/{
+public class ClienteService{
 	
-	private clienteRepository clienteRepo;
+	private ClienteRepository clienteRepo;
 	
-	public clienteService (clienteRepository clienServ) {
+	public ClienteService (ClienteRepository clienServ) {
 		this.clienteRepo=clienServ;
 	}
 	
-	public cliente add (cliente a) {
+	public Cliente add (Cliente a) {
 		return clienteRepo.save(a);
 	}
 	
-	public cliente edit (cliente a) {
+	public Cliente edit (Cliente a) {
 		return clienteRepo.save(a);
 	}
 	

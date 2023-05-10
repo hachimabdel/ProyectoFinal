@@ -14,7 +14,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data @NoArgsConstructor @Entity
-public class empleado {
+public class Empleado {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -26,7 +26,7 @@ public class empleado {
 	@DateTimeFormat (iso = ISO.DATE)
 	private LocalDate fechaAlta;
 	
-	public empleado(String nombre, String apellidos, LocalDate fechaAlta) {
+	public Empleado(String nombre, String apellidos, LocalDate fechaAlta) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.fechaAlta = fechaAlta;

@@ -2,23 +2,23 @@ package com.salesianostriana.dam.ProyectoFinal.service;
 
 import org.springframework.stereotype.Service;
 
-import com.salesianostriana.dam.ProyectoFinal.model.empleado;
-import com.salesianostriana.dam.ProyectoFinal.repository.empleadoRepository;
+import com.salesianostriana.dam.ProyectoFinal.model.Empleado;
+import com.salesianostriana.dam.ProyectoFinal.repository.EmpleadoRepository;
 
 @Service
-public class empleadoService {
+public class EmpleadoService {
 	
-	private empleadoRepository adminRepo; 
+	private EmpleadoRepository adminRepo; 
 
-	public empleadoService (empleadoRepository empServ) {
+	public EmpleadoService (EmpleadoRepository empServ) {
 		this.adminRepo=empServ;
 	}
 	
-	public empleado add(empleado a) {
+	public Empleado add(Empleado a) {
 		return adminRepo.save(a);
 	}
 	
-	public empleado edit (empleado a) {
+	public Empleado edit (Empleado a) {
 		return adminRepo.save(a);
 	}
 	

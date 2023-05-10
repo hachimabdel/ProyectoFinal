@@ -1,0 +1,21 @@
+INSERT INTO categoria (idCategoria, marca) VALUES (1, 'Samsung');
+INSERT INTO categoria (idCategoria, marca) VALUES (2, 'LG');
+INSERT INTO categoria (idCategoria, marca) VALUES (3, 'Whirlpool');
+INSERT INTO categoria (idCategoria, marca) VALUES (4, 'AEG');
+INSERT INTO categoria (idCategoria, marca) VALUES (5, 'Beko');
+INSERT INTO categoria (idCategoria, marca) VALUES (6, 'Teka');
+INSERT INTO categoria (idCategoria, marca) VALUES (7, 'Apple');
+INSERT INTO categoria (idCategoria, marca) VALUES (8, 'Corbero');
+INSERT INTO categoria (idCategoria, marca) VALUES (9, 'HP');
+INSERT INTO categoria (idCategoria, marca) VALUES (10, 'Balay');
+
+INSERT INTO producto (codProducto, idCategoria, numTecnico, marca, precio, descripcion) VALUES (1, 1, 1111, 'Samsung', '€461,04', 'Refrigerador de 4 puertas');
+INSERT INTO producto (codProducto, idCategoria, numTecnico, marca, precio, descripcion) VALUES (2, 2, 1112, 'LG', '€301,12', 'Refrigerador de 2 puertas');
+INSERT INTO producto (codProducto, idCategoria, numTecnico, marca, precio, descripcion) VALUES (3, 3, 1113, 'Whirlpool', '€118,92', 'Lavadora de carga frontal');
+INSERT INTO producto (codProducto, idCategoria, numTecnico, marca, precio, descripcion) VALUES (4, 4, 1114, 'AEG', '€493,64', 'Lavadora de carga superior');
+INSERT INTO producto (codProducto, idCategoria, numTecnico, marca, precio, descripcion) VALUES (5, 5, 1115, 'Beko', '€183,52', 'Horno de microondas de 20L');
+INSERT INTO producto (codProducto, idCategoria, numTecnico, marca, precio, descripcion) VALUES (6, 6, 1116, 'Teka', '€328,73', 'Horno de microondas de 15L');
+INSERT INTO producto (codProducto, idCategoria, numTecnico, marca, precio, descripcion) VALUES (7, 7, 1117, 'Apple', '€308,28', 'Televisor Smart TV de 55 pulgadas');
+INSERT INTO producto (codProducto, idCategoria, numTecnico, marca, precio, descripcion) VALUES (8, 8, 1118, 'Corbero', '€332,19', 'Televisor Smart TV de 50 pulgadas');
+INSERT INTO producto (codProducto, idCategoria, numTecnico, marca, precio, descripcion) VALUES (9, 9, 1119, 'HP', '€354,05', 'Secadora de ropa de carga frontal');
+INSERT INTO producto (codProducto, idCategoria, numTecnico, marca, precio, descripcion) VALUES (10, 10, 1120, 'Balay', '€276,83', 'Secadora de ropa de carga superior');
