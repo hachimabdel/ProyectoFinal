@@ -18,8 +18,8 @@ public class CategoriaService {
 		return repositorio.findAll();
 	}	
 	
-	public List<Categoria> findDestacadas() {
-		return repositorio.findDestacadas();
+	public List<Categoria> findNombre() {
+		return repositorio.findNombre();
 	}
 	
 	public Categoria save(Categoria categoria) {

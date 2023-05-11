@@ -7,11 +7,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.salesianostriana.dam.e09formulariosedicion.modelo.Categoria;
+import com.salesianostriana.dam.ProyectoFinal.model.Categoria;
+import com.salesianostriana.dam.ProyectoFinal.service.CategoriaService;
+import com.salesianostriana.dam.ProyectoFinal.service.ProductoService;
 
 
 @Controller
-@RequestMapping("/empleado/categoria")
+@RequestMapping("/admin/categoria")
 public class CategoriaController {
 	
 	@Autowired
@@ -25,13 +27,13 @@ public class CategoriaController {
 	public String index(Model model) {
 		
 		model.addAttribute("categorias", categoriaService.findAll());
-		return "admin/list-categoria";
+		return "admin/listado-categoria";
 	}
 	
 	@GetMapping("/nueva")
 	public String nuevaCategoria(Model model) {
 		model.addAttribute("categoria", new Categoria());
-		return "admin/form-categoria";
+		return "admin/formulario-categoria";
 	}
 
 }
