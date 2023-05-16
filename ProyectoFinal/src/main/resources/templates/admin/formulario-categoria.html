@@ -52,6 +52,22 @@
 		</div>
 	</nav>
 
+	<form>
+		<div class="mb-4">
+			<label for="exampleInputEmail1" class="form-label">Nombre</label>
+			<input type="text" class="form-control" id="nombre">
+		</div>
+		<div class="mb-4">
+			<label for="imagen" class="form-label">URL imagen:</label>
+			<input type="url" class="form-control" id="imagen">
+		</div>
+		<button type="submit" class="btn btn-primary">Enviar</button>
+	</form>
+
+	<!--<input type="hidden" th:field="*{id} id="id"/>
+	<label for="nombre">Nombre</label>
+	<input type="text" id="first-name" name="first-name" th:field="*{nombre}" >
+
 
 	<form class="login__form" action="" method="post">
 		<div class="container__login">
@@ -63,9 +79,10 @@
 				<button type="submit">Guardar</button><br><br><br><br><br><br><br><br><br><br><br><br>
 			</div>
 		</div>
-	</form>
+	</form> -->
 
 	<footer th:replace="~{fragmentos/footer::footer}"></footer>
 
 </body>
+
 </html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lista Categoría</title>
+	<link rel="stylesheet" href="../../css/estilos.css" th:href="@{/css/estilos.css}">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js"
+		integrity="sha384-sCI3dTBIJuqT6AwL++zH7qL8ZdKaHpxU43dDt9SyOzimtQ9eyRhkG3B7KMl6AO19"
+		crossorigin="anonymous"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"
+		integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
+		crossorigin="anonymous"></script>
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+
+<body>
+	<header th:replace="~{fragmentos/encabezado::encabezado}"></header>
+	<div class="overlay">
+		<a class="close">&times;</a>
+		<div class="overlay__content">
+			<a href="index.html">Inicio</a>
+			<a href="electrodomesticos.html">Electrodomésticos</a>
+			<a href="tecnicos.html">Técnicos</a>
+			<a href="nosotros.html">Nosotros</a>
+		</div>
+	</div>
+	<script type="text/javascript" src="../../js/index.js"></script>
+
+	<nav class="navbar navbar-expand-sm bg-light">
+		<div class="container-fluid">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="admin/listado-categoria.html"
+						th:href="@{admin/categoria/}">Frigoríficos</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" href="#">Lavadoras</a></li>
+				<li class="nav-item"><a class="nav-link" href="#">Hornos</a></li>
+			</ul>
+		</div>
+
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+						aria-haspopup="true" aria-expanded="false">Opciones <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="/admin/categoria/" th:href="@{/admin/categoria/}">Gestión de categorías</a>
+						</li>
+						<li><a href="/admin/producto/" th:href="@{/admin/producto/}">Gestión de productos</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container-items">
+		<div class="item">
+			<figure>
+				<img src="../../img/lg.png" alt="producto" />
+			</figure>
+			<div class="info-product">
+				<h2>Frigoríficos</h2>
+				<button>Editar</button>
+			</div>
+		</div>
+		<div class="item">
+			<figure>
+				<img src="../../img/samsung.png" alt="producto" />
+			</figure>
+			<div class="info-product">
+				<h2>Lavadoras</h2>
+				<button>Editar</button>
+			</div>
+		</div>
+		<div class="item">
+			<figure>
+				<img src="../../mg/lg2.png" alt="producto" />
+			</figure>
+			<div class="info-product">
+				<h2>Hornos</h2>
+				<button>Editar</button>
+			</div>
+		</div>
+		<div class="item">
+			<figure>
+				<img src="../img/../lavadoralg.png" alt="producto" />
+			</figure>
+			<div class="info-product">
+				<h2>Hornos</h2>
+				<button>Editar</button>
+			</div>
+		</div>
+		<div class="item">
+			<figure>
+				<img src="../../img/lavadoraBosch.png" alt="producto" />
+			</figure>
+			<div class="info-product">
+				<h2>Lavadoras</h2>
+				<button>Editar</button>
+			</div>
+		</div>
+		<div class="item">
+			<figure>
+				<img src="../../img/lavadoraSams.png" alt="producto" />
+			</figure>
+			<div class="info-product">
+				<h2>Lavavajillas</h2>
+				<button>Añadir al carrito</button>
+			</div>
+		</div>
+	</div>
+	<footer th:replace="~{fragmentos/footer::footer}"></footer>
+
+
+</body>
+
+</html>

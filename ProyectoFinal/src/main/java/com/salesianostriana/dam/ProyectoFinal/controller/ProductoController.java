@@ -33,7 +33,7 @@ public class ProductoController {
 
 		model.addAttribute("producto", new Producto());
 		model.addAttribute("categorias", categoriaService.findAll());
-		return "admin/form-producto";
+		return "admin/formulario-producto";
 	}
 
 	@PostMapping("/nuevo/submit")
