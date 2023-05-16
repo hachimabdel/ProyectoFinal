@@ -52,36 +52,23 @@
 		</div>
 	</nav>
 
-	<form>
+	<form th:action="@{/admin/categoria/nueva/submit}" th:object="${categoria}" method="post">
+		<h1>
+			<span th:text="${categoria.id} ? 'Editar' : 'Nueva'"></span> categoría
+		</h1>
 		<div class="mb-4">
-			<label for="exampleInputEmail1" class="form-label">Nombre</label>
-			<input type="text" class="form-control" id="nombre">
+			<label for="nombre" class="form-label">Nombre</label>
+			<input type="text" class="form-control" name="nombre" id="nombre" th:field="*{nombre}">
 		</div>
 		<div class="mb-4">
 			<label for="imagen" class="form-label">URL imagen:</label>
-			<input type="url" class="form-control" id="imagen">
+			<input type="url" class="form-control" name="imagen" id="imagen" th:field="*{imagen}">
 		</div>
-		<button type="submit" class="btn btn-primary">Enviar</button>
+		<button type="submit" name="submit" class="btn btn-primary">Enviar</button>
 	</form>
 
-	<!--<input type="hidden" th:field="*{id} id="id"/>
-	<label for="nombre">Nombre</label>
-	<input type="text" id="first-name" name="first-name" th:field="*{nombre}" >
-
-
-	<form class="login__form" action="" method="post">
-		<div class="container__login">
-			<div class="login__form-group">
-				<label for="username">Nombre:</label>
-				<input type="text" id="first-name" name="first-name" required>
-			</div>
-			<div class="login__form-group">
-				<button type="submit">Guardar</button><br><br><br><br><br><br><br><br><br><br><br><br>
-			</div>
-		</div>
-	</form> -->
-
-	<footer th:replace="~{fragmentos/footer::footer}"></footer>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </body>
 

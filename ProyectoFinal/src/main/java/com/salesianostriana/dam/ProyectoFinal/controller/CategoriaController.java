@@ -37,7 +37,7 @@ public class CategoriaController {
 	}
 
 	@PostMapping("/nueva/submit")
-	public String submitNuevaCategoria(@ModelAttribute("categoria") Categoria categoria, Model model) {
+	public String submitNuevaCategoria(@ModelAttribute("categorias") Categoria categoria, Model model) {
 
 		categoriaService.save(categoria);
 
@@ -56,6 +56,11 @@ public class CategoriaController {
 			return "redirect:/admin/categoria/";
 		}
 
+	}
+	@PostMapping("editarC/submit")
+	public String edd(Categoria c){
+		categoriaService.save(c);
+		return "redirect:/admin/categoria/";
 	}
 
 	@GetMapping("/borrar/{id}")
