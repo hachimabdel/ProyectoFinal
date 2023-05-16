@@ -24,9 +24,9 @@
 		<a class="footer__logo" href="index.html" th:href="@{/index}"><img src="img/ALKACEN.png" width="130px" alt="logo"></a>
 		<nav>
 			<ul class="nav__links">
-				<li><a href="index.html" th:href="@{/index}">Inicio</a></li>
-				<li><a href="tecnicos.html" th:href="@{/tecnicos}">Técnicos</a></li>
-				<li><a href="nosotros.html" th:href="@{/nosotros}">Nosotros</a></li>
+				<li><a th:href="@{/index}">Inicio</a></li>
+				<li><a th:href="@{/tecnicos}">Técnicos</a></li>
+				<li><a th:href="@{/nosotros}">Nosotros</a></li>
 			</ul>
 		</nav>
 		<a class="cta" href="formulario-login.html" th:href="@{/formulario-login}" >Iniciar Sesion</a>
@@ -35,9 +35,9 @@
 	<div class="overlay">
 		<a class="close">&times;</a>
 		<div class="overlay__content">
-			<a href="index.html" th:href="{/index}">Inicio</a>
-			<a href="tecnicos.html" th:href="{/tecnicos}" >Técnicos</a>
-			<a href="nosotros.html" th:href="{/nosotros}">Nosotros</a>
+			<a th:href="{/index}">Inicio</a>
+			<a th:href="{/tecnicos}" >Técnicos</a>
+			<a th:href="{/nosotros}">Nosotros</a>
 		</div>
 	</div>
 	<script type="text/javascript" src="../static/js/index.css"></script>

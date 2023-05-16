@@ -63,5 +63,20 @@ public class MainController {
 		return "redirect:/";
 
 	}
+	
+	@GetMapping("/index")
+	public String indexH () {
+		return "index";
+	}
+	
+	@GetMapping("/tecnicos")
+	public String tecnicosH () {
+		return "tecnicos";
+	}
+	
+	@GetMapping("/nosotros")
+	public String nosotrosH () {
+		return "nosotros";
+	}
 
 }
