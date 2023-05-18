@@ -54,6 +54,7 @@
 				<h2>
 					<span th:text="${categoria.id} ? 'Editar' : 'Nueva'"></span> categoría
 				</h2>
+				<input th:if="${categoria.id!=0}" type="hidden" name="id" th:field="*{id}">
 				<div class="mb-4">
 					<label for="nombre" class="form-label">Nombre</label>
 					<input type="text" class="form-control" name="nombre" id="nombre" th:field="*{nombre}">

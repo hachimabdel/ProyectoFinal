@@ -39,9 +39,11 @@
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
 							aria-expanded="false">Opciones</a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="admin/categoria/" th:href="@{/admin/categoria/}">Gestión
+							<li><a class="dropdown-item" href="admin/listado-categoria.html"
+									th:href="@{/admin/categoria/}">Gestión
 									categorías</a></li>
-							<li><a class="dropdown-item" href="admin/producto/" th:href="@{/admin/producto/}">Gestión
+							<li><a class="dropdown-item" href="admin/listado-producto.html"
+									th:href="@{/admin/producto/}">Gestión
 									productos</a></li>
 						</ul>
 					</li>
@@ -53,10 +55,10 @@
 
 	<div class="slider-frame">
 		<ul>
-			<li><img src="../img/lg.png" alt=""></li>
-			<li><img src="../img/lavadoralg.png" alt=""></li>
-			<li><img src="../img/samsung.png" alt=""></li>
-			<li><img src="../img/lavavajWhirl.png" alt=""></li>
+			<li><img src="../static/img/lg.png" alt=""></li>
+			<li><img src="../static/img/lavadoralg.png" alt=""></li>
+			<li><img src="../static/img/samsung.png" alt=""></li>
+			<li><img src="../static/img/lavavajWhirl.png" alt=""></li>
 		</ul>
 	</div>
 
@@ -64,70 +66,92 @@
 		<div class="row g-3">
 			<div class="col-4">
 				<div class="card" style="width: 20rem;">
-					<img class="card-img-top" src="../img/planrenove.png"
-						alt="Card image cap">
+					<img class="card-img-top" src="../static/img/planrenove.png" alt="Card image cap">
 					<div class="card-body">
 						<h5 class="card-title">Plan renove</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
-							the card's content.</p>
+						<p class="card-text">Hasta 150€ por tu electrodoméstico antiguo.</p>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-4">
 				<div class="card" style="width: 20rem;">
-					<img class="card-img-top" src="../img/recogida.png" alt="Card image cap">
+					<img class="card-img-top" src="../static/img/recogida.png" alt="Card image cap">
 					<div class="card-body">
 						<h5 class="card-title">Recogida</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
-							the card's content.</p>
+						<p class="card-text">Recogida del electrodoméstico antiguo totalmente gratis</p>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-4">
 				<div class="card" style="width: 20rem;">
-					<img class="card-img-top" src="../img/energetica.png" alt="Card image cap">
+					<img class="card-img-top" src="../static/img/energetica.png" alt="Card image cap">
 					<div class="card-body">
 						<h5 class="card-title">Consumo energético</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
-							the card's content.</p>
+						<p class="card-text">Esta tabla de guiará a la hora de escoger.</p>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-4">
 				<div class="card" style="width: 20rem;">
-					<img class="card-img-top" src=""
-						alt="Card image cap">
+					<img class="card-img-top" src="../static/img/lavadoraBosch.png" alt="Card image cap">
 					<div class="card-body">
-						<h5 class="card-title">Plan renove</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
-							the card's content.</p>
+						<h5 class="card-title">Lavadoras WIFI</h5>
+						<p class="card-text">Lavadora Wifi, conectiva o inteligente.
+							La última tecnología para el lavado de tus prendas llega para revolucionar tus rutinas.</p>
 					</div>
 				</div>
 			</div>
-			
-						<div class="col-4">
+
+			<div class="col-4">
 				<div class="card" style="width: 20rem;">
-					<img class="card-img-top" src="https://www.aetram.es/adjuntos/fichero_4967_20200709.jpg"
-						alt="Card image cap">
+					<img class="card-img-top" src="../static/img/hornos.png" alt="Card image cap">
 					<div class="card-body">
-						<h5 class="card-title">Plan renove</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
-							the card's content.</p>
+						<h5 class="card-title">Hornos pirolíticos</h5>
+						<p class="card-text">Hornos que se limpian solos ya disponible en varios modelos.
+							¡No te quedes sin el tuyo!</p>
 					</div>
 				</div>
 			</div>
-			
-						<div class="col-4">
+
+			<div class="col-4">
 				<div class="card" style="width: 20rem;">
-					<img class="card-img-top" src="https://www.aetram.es/adjuntos/fichero_4967_20200709.jpg"
-						alt="Card image cap">
+					<img class="card-img-top" src="../static/img/vitrosEx.png" alt="Card image cap">
 					<div class="card-body">
-						<h5 class="card-title">Plan renove</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
-							the card's content.</p>
+						<h5 class="card-title">Vitros Extractoras</h5>
+						<p class="card-text">Llegan las vitros extractoras con un consumo energetico muy bajo.¡No compres campana!</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4">
+				<div class="card" style="width: 20rem;">
+					<img class="card-img-top" src="../static/img/diasPrueba.png" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">30 días de prueba</h5>
+						<p class="card-text">Llevate le producto y pruebalo hasta 30 días</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4">
+				<div class="card" style="width: 20rem;">
+					<img class="card-img-top" src="../static/img/horas.png" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Atención al cliente</h5>
+						<p class="card-text">Servicio de atención al cliente 24 horas al día</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4">
+				<div class="card" style="width: 20rem;">
+					<img class="card-img-top" src="../static/img/istalacion.png" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Instalación disponible</h5>
+						<p class="card-text">Instalacion del producto si el cliente lo desea.</p>
 					</div>
 				</div>
 			</div>

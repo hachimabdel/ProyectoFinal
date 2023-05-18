@@ -37,7 +37,7 @@ public class CategoriaController {
 	}
 
 	@PostMapping("/nueva/submit")
-	public String submitNuevaCategoria(@ModelAttribute("categorias") Categoria categoria, Model model) {
+	public String submitNuevaCategoria(@ModelAttribute("categoria") Categoria categoria, Model model) {
 
 		categoriaService.save(categoria);
 
@@ -46,7 +46,7 @@ public class CategoriaController {
 
 	@GetMapping("/editar/{id}")
 	public String editarCategoria(@PathVariable("id") Long id, Model model) {
-
+		
 		Categoria categoria = categoriaService.findById(id);
 
 		if (categoria != null) {
