@@ -21,15 +21,6 @@
 
 <body>
 	<header th:replace="~{fragmentos/encabezado::encabezado}"></header>
-	<!--<div class="overlay">
-		<a class="close">&times;</a>
-		<div class="overlay__content">
-			<a href="index.html" target="_blank" th:href="@{/index}">Inicio</a>
-			<a href="tecnicos.html" target="_blank" th:href="@{/tecnicos}">Técnicos</a>
-			<a href="nosotros.html" target="_blank" th:href="@{/nosotros}">Nosotros</a>
-		</div>
-	</div>
-	<script type="text/javascript" src="../js/index.js"></script>-->
 
 	<nav class="navbar navbar-expand-lg bg-light">
 		<div class="container-fluid">
@@ -69,31 +60,79 @@
 		</ul>
 	</div>
 
-
-	<div class="container-items">
-		<div class="item" th:each="producto : ${productos}">
-			<a href="#" th:href="@{/product/{id}(id=${producto.id})}">
-
-				<figure>
-					<div class="photo">
-						<img src="http://placehold.it/350x260"
-							th:src="${#strings.isEmpty(producto.imagen)} ? 'http://placehold.it/350x260' : ${producto.imagen}"
-							class="img-responsive" alt="a" />
-				</figure>
-				<div class="info-product">
-					<h2 th:text="${#strings.abbreviate(producto.nombre,65)}">Nombre</h2>
-					<span
-						th:text="${producto.descuento == 0} ? ${#numbers.formatCurrency(producto.pvp)} : ${#numbers.formatCurrency(producto.pvp * (1 - producto.descuento))}">10</span>
-
-					<th:block th:if="${producto.descuento > 0}">
-						<p class="price" th:text="${#numbers.formatCurrency(producto.pvp)}"></p>
-						<span class="label label-danger"
-							th:text=${#numbers.formatPercent(producto.descuento,1,0)}></span>
-					</th:block>
+	<div class="container">
+		<div class="row g-3">
+			<div class="col-4">
+				<div class="card" style="width: 20rem;">
+					<img class="card-img-top" src="../img/planrenove.png"
+						alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Plan renove</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
+							the card's content.</p>
+					</div>
 				</div>
+			</div>
+
+			<div class="col-4">
+				<div class="card" style="width: 20rem;">
+					<img class="card-img-top" src="../img/recogida.png" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Recogida</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
+							the card's content.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4">
+				<div class="card" style="width: 20rem;">
+					<img class="card-img-top" src="../img/energetica.png" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Consumo energético</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
+							the card's content.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4">
+				<div class="card" style="width: 20rem;">
+					<img class="card-img-top" src=""
+						alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Plan renove</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
+							the card's content.</p>
+					</div>
+				</div>
+			</div>
+			
+						<div class="col-4">
+				<div class="card" style="width: 20rem;">
+					<img class="card-img-top" src="https://www.aetram.es/adjuntos/fichero_4967_20200709.jpg"
+						alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Plan renove</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
+							the card's content.</p>
+					</div>
+				</div>
+			</div>
+			
+						<div class="col-4">
+				<div class="card" style="width: 20rem;">
+					<img class="card-img-top" src="https://www.aetram.es/adjuntos/fichero_4967_20200709.jpg"
+						alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">Plan renove</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of
+							the card's content.</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
-
 
 	<footer th:replace="~{fragmentos/footer::footer}"></footer>
 

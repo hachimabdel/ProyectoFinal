@@ -1,5 +1,5 @@
 package com.salesianostriana.dam.ProyectoFinal.serviciobase;
 
-public class clienteServicioBase {
+public class UsuarioServicioBase {
 
 }

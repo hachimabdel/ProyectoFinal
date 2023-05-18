@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity @NoArgsConstructor @Data
-public class Cliente {
+public class Usuario {
 	
 	@Id
 	@GeneratedValue

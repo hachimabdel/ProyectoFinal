@@ -52,36 +52,38 @@
 		</div>
 	</nav>
 	<div class="container">
-		<div class="item">
-
-			<div class="info-product">
-				<a href="formulario-producto.html" th:href="@{/admin/producto/nuevo/}" class="btn btn-primary">Nuevo
-					producto</a>
+		<div class="row">
+			<div class="col-md-offset-1 col-md-10">
+				<div class="pull-right">
+					<a href="formulario-producto.html" th:href="@{/admin/producto/nueva/}"
+						class="btn btn-primary">Nuevo producto</a>
+				</div>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Imagen</th>
+							<th scope="col">Nombre</th>
+							<th scope="col">Pvp</th>
+							<th scope="col">Operaciones</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="producto : ${productos}">
+							<td><img th:src="${not (#strings.isEmpty(producto.imagen))} ? ${producto.imagen} : 'http://placehold.it/48x48'"
+									class="img-responsive icono-categoria" alt="imagen" /></td>
+							<td th:text="${producto.nombre}"></td>
+							<td th:text="${#numbers.formatCurrency(producto.pvp)}"></td>
+							<td class="operaciones"><a href="#"
+									th:href="@{/admin/producto/editar/{id}(id=${producto.id})}"
+									class="btn btn-dark">Editar</a>
+								<button type="button" class="btn btn-dark" data-toggle="modal"
+									data-target="#delete-modal" th:data-id="${producto.id}">Borrar</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Imagen</th>
-					<th>Nombre</th>
-					<th>Pvp</th>
-					<th>Operaciones</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="producto : ${productos}">
-					<td><img th:src="${not (#strings.isEmpty(producto.imagen))} ? ${producto.imagen} : 'http://placehold.it/48x48'"
-							class="img-responsive icono-categoria" alt="imagen" /></td>
-					<td th:text="${producto.nombre}"></td>
-					<td th:text="${#numbers.formatCurrency(producto.pvp)}"></td>
-					<td class="operaciones"><a href="#" th:href="@{/admin/producto/editar/{id}(id=${producto.id})}"
-							class="btn btn-dark">Editar</a>
-						<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#delete-modal"
-							th:data-id="${producto.id}">Borrar</button>
-					</td>
-				</tr>
-			</tbody>
-		</table>
 	</div>
 
 	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog">
@@ -94,7 +96,7 @@
 					<h4 class="modal-title">Borrar producto</h4>
 				</div>
 				<div class="modal-body">
-					<p>¿Está usted seguro de borrar este producto?</p>
+					<p>¿Está usted seguro de borrar esta producto?</p>
 					<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
 					<a href="/admin/producto/borrar/" class="btn btn-danger">Sí</a>
 				</div>
