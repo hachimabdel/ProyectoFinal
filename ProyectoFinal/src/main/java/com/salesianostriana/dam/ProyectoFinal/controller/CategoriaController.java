@@ -65,21 +65,8 @@ public class CategoriaController {
 
 	@GetMapping("/borrar/{id}")
 	public String borrarCategoria(@PathVariable("id") Long id, Model model) {
-
-		Categoria categoria = categoriaService.findById(id);
-
-		if (categoria != null) {
-
-			if (productoService.numeroProductosCategoria(categoria) == 0) {
-				categoriaService.delete(categoria);
-			} else {
-				return "redirect:/admin/categoria/?error=true";
-			}
-
-		}
-
-		return "redirect:/admin/categoria/";
-
+	Categoria c=new Categoria();
+	categoriaService.delete(c);
+	return "admin/listado-categoria";
 	}
-
 }

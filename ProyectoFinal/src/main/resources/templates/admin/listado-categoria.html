@@ -16,8 +16,7 @@
 		integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
 		crossorigin="anonymous"></script>
 	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 
 <body>
@@ -30,11 +29,13 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavDropdown">
 				<ul class="navbar-nav">
-					<li th:each="categoria : ${categorias}"><a href="#" th:href="@{/?(idCategoria=${categoria.id})}"
-							th:text="${categoria.nombre}">categoría</a></li>
-
+					<li th:each="categoria : ${categorias}">
+						<a class="nav-link" href="#" th:href="@{/?(idCategoria=${categoria.id})}"
+							th:text="${categoria.nombre}">categoría</a>
+					</li>
 					<li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="#"></a>
+					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
 							aria-expanded="false">Opciones</a>
@@ -45,7 +46,6 @@
 									th:href="@{/admin/producto/}">Gestión productos</a></li>
 						</ul>
 					</li>
-					</li>
 				</ul>
 			</div>
 		</div>
@@ -55,11 +55,15 @@
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8">
 				<div class="alert alert-warning alert-dismissible" role="alert" th:if="${param.error}">
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					<span>¡No se puede borrar esta categoría que tiene productos asociados!</span>
+				</div>
+				<!--<div class="alert alert-warning alert-dismissible" role="alert" th:if="${param.error}">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 					<span>¡No se puede borrar una categoría que tiene asociados productos!</span>
-				</div>
+				</div>-->
 
 				<div class="pull-right">
 					<a href="formulario-categoria.html" th:href="@{/admin/categoria/nueva/}"
@@ -73,16 +77,19 @@
 							<th scope="col">Operaciones</th>
 						</tr>
 					</thead>
+
 					<tbody>
 						<tr th:each="categoria : ${categorias}">
-							<td><img th:src="${not (#strings.isEmpty(categoria.imagen))} ? ${categoria.imagen} : 'http://placehold.it/48x48'"
-									class="img-responsive icono-categoria" alt="imagen" /></td>
+							<td>
+								<img th:src="${not (#strings.isEmpty(categoria.imagen))} ? ${categoria.imagen} : 'http://placehold.it/48x48'"
+									class="img-responsive icono-categoria" alt="imagen">
+							</td>
 							<td th:text="${categoria.nombre}"></td>
-							<td class="operaciones"><a href="#"
-									th:href="@{/admin/categoria/editar/{id}(id=${categoria.id})}"
-									class="btn btn-dark">Editar</a>
-								<button type="button" class="btn btn-dark" data-toggle="modal"
-									data-target="#delete-modal" th:data-id="${categoria.id}">Borrar</button>
+							<td class="operaciones">
+								<a href="#" th:href="@{/admin/categoria/editar/{id}(id=${categoria.id})}"
+									class="btn btn-primary">Editar</a>
+								<button type="button" class="btn btn-primary" data-bs-toggle="modal"
+									data-bs-target="#delete-modal" th:data-id="${categoria.id}">Borrar</button>
 							</td>
 						</tr>
 					</tbody>
@@ -92,6 +99,22 @@
 	</div>
 
 	<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					<h4 class="modal-title">Borrar categoría</h4>
+				</div>
+				<div class="modal-body">
+					<p>¿Está usted seguro de borrar esta categoría?</p>
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+					<a href="/admin/categoria/borrar/" class="btn btn-danger">Sí</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -108,10 +131,10 @@
 			</div>
 
 		</div>
-	</div>
-	
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</div>-->
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="../../static/js/index2.js" th:src="@{/js/index2.js}"></script>
 
 

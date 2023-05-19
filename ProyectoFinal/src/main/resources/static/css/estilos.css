@@ -110,7 +110,6 @@ header {
 }
 
 /* Footer*/
-
 footer {
 	background-color: #24252a;
 	color: #edf0f1;
@@ -256,6 +255,22 @@ h2 {
 
 .slider-frame img {
 	width: 100%;
+}
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
 }
 
 @keyframes slide {
