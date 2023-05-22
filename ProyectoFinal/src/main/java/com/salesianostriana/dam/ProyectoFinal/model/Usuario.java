@@ -1,26 +1,65 @@
 package com.salesianostriana.dam.ProyectoFinal.model;
 
+import java.util.Collection;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity @NoArgsConstructor @Data
+@SuppressWarnings("serial")
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Builder
 public class Usuario {
-	
+
 	@Id
 	@GeneratedValue
-	private long dni;
-	
+	private Long id;
+
+	private String username, password;
+
 	private String nombre;
 	private String apellidos;
 	private String direccion;
-	
-	
-	
-	
-	
+
+	private boolean admin;
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		String role = "ROLE_";
+		role += (admin) ? "ADMIN" : "USER";
+		return List.of(new SimpleGrantedAuthority(role));
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
+	}
 
 }
