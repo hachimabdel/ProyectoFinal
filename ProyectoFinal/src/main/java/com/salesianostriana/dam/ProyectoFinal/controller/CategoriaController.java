@@ -46,7 +46,7 @@ public class CategoriaController {
 
 	@GetMapping("/editar/{id}")
 	public String editarCategoria(@PathVariable("id") Long id, Model model) {
-		
+
 		Categoria categoria = categoriaService.findById(id);
 
 		if (categoria != null) {
@@ -57,16 +57,17 @@ public class CategoriaController {
 		}
 
 	}
+
 	@PostMapping("editarC/submit")
-	public String edd(Categoria c){
+	public String edd(Categoria c) {
 		categoriaService.save(c);
 		return "redirect:/admin/categoria/";
 	}
 
 	@GetMapping("/borrar/{id}")
 	public String borrarCategoria(@PathVariable("id") Long id, Model model) {
-	Categoria c=new Categoria();
-	categoriaService.delete(c);
-	return "admin/listado-categoria";
+		Categoria c = new Categoria();
+		categoriaService.delete(c);
+		return "admin/listado-categoria";
 	}
 }

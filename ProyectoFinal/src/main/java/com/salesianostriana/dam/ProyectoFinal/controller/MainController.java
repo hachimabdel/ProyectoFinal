@@ -63,19 +63,19 @@ public class MainController {
 		return "redirect:/";
 
 	}
-	
+
 	@GetMapping("/index")
-	public String indexH () {
+	public String indexH() {
 		return "index";
 	}
-	
+
 	@GetMapping("/tecnicos")
-	public String tecnicosH () {
+	public String tecnicosH() {
 		return "tecnicos";
 	}
-	
+
 	@GetMapping("/nosotros")
-	public String nosotrosH () {
+	public String nosotrosH() {
 		return "nosotros";
 	}
 
