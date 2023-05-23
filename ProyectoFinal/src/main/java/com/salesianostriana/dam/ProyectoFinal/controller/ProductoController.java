@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.salesianostriana.dam.ProyectoFinal.model.Categoria;
 import com.salesianostriana.dam.ProyectoFinal.model.Producto;
 import com.salesianostriana.dam.ProyectoFinal.service.CategoriaService;
 import com.salesianostriana.dam.ProyectoFinal.service.ProductoService;
@@ -52,11 +53,17 @@ public class ProductoController {
 		if (producto != null) {
 			model.addAttribute("producto", producto);
 			model.addAttribute("categorias", categoriaService.findAll());
-			return "admin/form-producto";
+			return "admin/formulario-producto";
 		} else {
 			return "redirect:/admin/producto/";
 		}
 
+	}
+	
+	@PostMapping("editarP/submit")
+	public String edd(Producto p) {
+		productoService.save(p);
+		return "redirect:/admin/producto/";
 	}
 
 	@GetMapping("/borrar/{id}")

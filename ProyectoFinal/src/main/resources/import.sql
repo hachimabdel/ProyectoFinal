@@ -1,7 +1,7 @@
-INSERT INTO CATEGORIA (ID, NOMBRE, IMAGEN) VALUES (1,'Frigoríficos', null);
-INSERT INTO CATEGORIA (ID, NOMBRE, IMAGEN) VALUES (2,'Lavadoras',null);
-INSERT INTO CATEGORIA (ID, NOMBRE, IMAGEN) VALUES (3,'Lavavajillas',null);
-INSERT INTO CATEGORIA (ID, NOMBRE, IMAGEN) VALUES (4,'Hornos',null);
+INSERT INTO CATEGORIA (ID, NOMBRE, IMAGEN) VALUES (1,'Frigoríficos', 'https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_97545759/fee_786_587_png');
+INSERT INTO CATEGORIA (ID, NOMBRE, IMAGEN) VALUES (2,'Lavadoras','https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_100870864/fee_786_587_png');
+INSERT INTO CATEGORIA (ID, NOMBRE, IMAGEN) VALUES (3,'Lavavajillas','https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_102645483/fee_786_587_png');
+INSERT INTO CATEGORIA (ID, NOMBRE, IMAGEN) VALUES (4,'Hornos','https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_98306691/fee_786_587_png');
 
 
 INSERT INTO PRODUCTO (ID, NOMBRE, DESCRIPCION, PVP, DESCUENTO, IMAGEN, CATEGORIA_ID) VALUES (5,'Frigorífico americano - Samsung','Frigorífico americano - Samsung RS68A8522S9/EF, No Frost, 634 l, Dispensador hielo y agua, 178 cm, Inox',1353, 0,'https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_97545759/fee_786_587_png',1);

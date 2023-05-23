@@ -58,16 +58,10 @@
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 					<span>¡No se puede borrar esta categoría que tiene productos asociados!</span>
 				</div>
-				<!--<div class="alert alert-warning alert-dismissible" role="alert" th:if="${param.error}">
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<span>¡No se puede borrar una categoría que tiene asociados productos!</span>
-				</div>-->
-
 				<div class="pull-right">
 					<a href="formulario-categoria.html" th:href="@{/admin/categoria/nueva/}"
 						class="btn btn-primary">Nueva categoría</a>
+					<a href="index.html" th:href="@{/index}" class="btn btn-primary">Volver</a>
 				</div>
 				<table class="table">
 					<thead>
@@ -77,12 +71,12 @@
 							<th scope="col">Operaciones</th>
 						</tr>
 					</thead>
-
 					<tbody>
 						<tr th:each="categoria : ${categorias}">
 							<td>
 								<img th:src="${not (#strings.isEmpty(categoria.imagen))} ? ${categoria.imagen} : 'http://placehold.it/48x48'"
-									class="img-responsive icono-categoria" alt="imagen">
+									class="img-fluid img-thumbnail" alt="imagen"
+									style="max-width: 100px; max-height: 100px;" />
 							</td>
 							<td th:text="${categoria.nombre}"></td>
 							<td class="operaciones">
@@ -94,6 +88,7 @@
 						</tr>
 					</tbody>
 				</table>
+
 			</div>
 		</div>
 	</div>
